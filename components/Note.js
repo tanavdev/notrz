@@ -9,7 +9,7 @@ export default function Note(props) {
             <h1>{props.title}</h1>
             <p>{props.content}</p>
             <div className="menus">
-                <button onClick={handleClick}>del</button>
+                <button onClick={handleClick}>🗑</button>
             </div>
         </div>
     );

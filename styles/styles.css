@@ -15,6 +15,7 @@ header {
   background-color: #f5ba13;
   margin: auto;
   padding: 16px 32px;
+  user-select: none;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -68,7 +69,7 @@ footer p {
   box-shadow: 0 2px 5px #ccc;
   padding: 1rem;
   margin-top: 1rem;
-  min-width: 90vw;
+  width: 45vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -89,7 +90,10 @@ footer p {
   font-size: 1.1em;
   font-weight: inherit;
   border: none;
+  min-width: calc(45vw - 2rem);
+  max-width: calc(45vw - 2rem);
   outline: none;
+  min-height: 4rem;
   font-family: "Livvic";
 }
 .note p {
@@ -106,8 +110,10 @@ footer p {
   cursor: pointer;
   background-color: #fff;
   color: #f5ba13;
+  font-size: 2rem;
   border: none;
   outline: none;
+  user-select: none;
   font-weight: bold;
 }
 .add{
