@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Montserrat";
+  font-family: "Livvic";
 }
 body {
   background: #eee;
@@ -37,8 +37,8 @@ footer p {
   color: #ccc;
 }
 @keyframes noteanime {
-  from {opacity: 0; transform: translate(0, -5px);}
-  to {opacity: 1; transform: translate(0, 0);}
+  from {opacity: 0; transform: translate(0, -7px) scale(0.9);}
+  to {opacity: 1; transform: translate(0, 0) scale(1);}
 }
 .notecontainer{
   padding-top: 1rem;
@@ -53,7 +53,7 @@ footer p {
 }
 .note {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px #ccc;
   padding: 0.7rem;
   min-width: 240px;
@@ -64,21 +64,20 @@ footer p {
 }
 .addnote{
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 1rem;
-  min-width: 300px;
-  max-width: 480px;
+  min-width: 90vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  animation-name: noteanime;
-  animation-duration: 0.5s;
 }
 .title{
   font-size: 1.1em;
+  font-family: "Livvic";
   margin-bottom: 6px;
+  font-weight: bold;
   border: none;
   outline: none;
 }
@@ -91,7 +90,7 @@ footer p {
   font-weight: inherit;
   border: none;
   outline: none;
-  font-family: sans-serif;
+  font-family: "Livvic";
 }
 .note p {
   font-size: 1.1em;
@@ -121,15 +120,18 @@ footer p {
   background-color: #f5ba13;
   color: #fff;
   height: 3rem;
+  user-select: none;
   width: 3rem;
   font-size: 2rem;
   border-radius: 50%;
   border: none;
   outline: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 .addcontainer{
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }

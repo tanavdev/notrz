@@ -1,17 +1,22 @@
+import { useState } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Note from "../components/Note";
 import Addnote from "../components/Addnote";
-import notes from "../notes"
-
-
 
 export default function Home() {
-  function showNote(i) {
-    return <Note title={i.title} content={i.content} />
-  }
+  const [notes, setNotes] = useState([])
+
   function addNote(note) {
-    console.log(note)
+    setNotes(prevNotes => {
+      return [...prevNotes, note];
+    })
+  }
+  function deleteNote(id) {
+    setNotes(prevNotes => {
+      return prevNotes.filter((i, index) => {
+        return index != id;
+      })
+    })
   }
 
   return (
@@ -21,9 +26,10 @@ export default function Home() {
         <Addnote onAdd={addNote} />
       </div>
       <div className="notecontainer">
-        {notes.map(showNote)}
+        {notes.map((i, index) => {
+          return <Note id={index} title={i.title} content={i.content} onDelete={deleteNote} />
+        })}
       </div>
-      <Footer />
     </div>
   );
 }

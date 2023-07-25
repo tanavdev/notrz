@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Addnote(props) {
+    const [isExpanded, setExpanded] = useState(false)
     const [note, setNote] = useState(
         {
             title: "",
@@ -19,15 +20,22 @@ export default function Addnote(props) {
         })
     }
     function submitNote(){
-        props.onAdd(note)
+        if(note.title != "" && note.content != ""){
+            props.onAdd(note)
+            setNote({ title: "", content: "" })
+        }
     }
     return (
         <div className="addnote">
-            <input className="title" name="title" onChange={handleChange} value={note.title} placeholder="Title" />
-            <textarea className="content" name="content" onChange={handleChange} value={note.content} rows="3" placeholder="Take a note..." />
-            <div className="add">
-                <button onClick={submitNote}>+</button>
-            </div>
+            {isExpanded && (
+                <input className="title" name="title" onChange={handleChange} value={note.title} placeholder="Title" />
+            )}
+            <textarea onClick={() => setExpanded(true)} className="content" name="content" onChange={handleChange} value={note.content} cols={6} rows={isExpanded ? 3 : 1} placeholder="Take a note..." />
+            {isExpanded && (        
+                <div className="add">
+                    <button onClick={submitNote}>+</button>
+                </div>
+            )}
         </div>
     );
 }
