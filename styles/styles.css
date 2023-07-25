@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat";
+}
+body {
+  background: #eee;
+  padding: 0;
+}
+
+header {
+  background-color: #f5ba13;
+  margin: auto;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-weight: bolder;
+}
+
+footer {
+  text-align: center;
+  padding-top: 0.5rem;
+
+  bottom: 0;
+  background-color: #eee;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+@keyframes noteanime {
+  from {opacity: 0; transform: translate(0, -5px);}
+  to {opacity: 1; transform: translate(0, 0);}
+}
+.notecontainer{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  display: grid;
+  overflow-y: auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill);
+  grid-gap: 0.5rem;
+}
+.note {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 0.7rem;
+  min-width: 240px;
+  height: fit-content;
+  float: left;
+  animation-name: noteanime;
+  animation-duration: 0.5s;
+}
+.addnote{
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 2rem;
+  margin-top: 1rem;
+  min-width: 300px;
+  max-width: 480px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  animation-name: noteanime;
+  animation-duration: 0.5s;
+}
+.title{
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  border: none;
+  outline: none;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.content{
+  font-size: 1.1em;
+  font-weight: inherit;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+.note p {
+  font-size: 1.1em;
+  font-weight: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.menus{
+  padding-top: 0.4rem;
+  float: right;
+}
+.menus button {
+  cursor: pointer;
+  background-color: #fff;
+  color: #f5ba13;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.add{
+  padding-top: 0.4rem;
+  display: flex;
+  justify-content: end;
+}
+.add button {
+  cursor: pointer;
+  background-color: #f5ba13;
+  color: #fff;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.addcontainer{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
