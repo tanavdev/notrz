@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <div className="notecontainer">
         {notes.map((i, index) => {
-          return <Note id={index} title={i.title} content={i.content} onDelete={deleteNote} />
+          return <Note key={index} title={i.title} content={i.content} onDelete={deleteNote} />
         })}
       </div>
     </div>
