@@ -1,16 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-html {
-  font-family: "Livvic";
+  font-family: "Inter";
 }
 body {
   background: #eee;
-  padding: 0;
 }
-
 header {
   background-color: #f5ba13;
   margin: auto;
@@ -18,7 +16,6 @@ header {
   user-select: none;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
-
 header h1 {
   color: #fff;
   font-weight: bolder;
@@ -27,7 +24,6 @@ header h1 {
 footer {
   text-align: center;
   padding-top: 0.5rem;
-
   bottom: 0;
   background-color: #eee;
   width: 100%;
@@ -38,14 +34,15 @@ footer p {
   color: #ccc;
 }
 @keyframes noteanime {
-  from {opacity: 0; transform: translate(0, -7px) scale(0.9);}
-  to {opacity: 1; transform: translate(0, 0) scale(1);}
+  from {opacity: 0; transform: translate(-14px, 0);}
+  to {opacity: 1; transform: translate(0, 0);}
 }
 .notecontainer{
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 2vw;
   padding-right: 2vw;
+  min-height: 60vh;
   display: grid;
   overflow-y: auto;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -68,33 +65,33 @@ footer p {
   border-radius: 10px;
   box-shadow: 0 2px 5px #ccc;
   padding: 1rem;
+  width: 80vw;
   margin-top: 1rem;
-  width: 45vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
 }
 .title{
   font-size: 1.1em;
-  font-family: "Livvic";
   margin-bottom: 6px;
   font-weight: bold;
   border: none;
   outline: none;
+  margin-bottom: 1rem;
 }
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
 .content{
-  font-size: 1.1em;
-  font-weight: inherit;
   border: none;
-  min-width: calc(45vw - 2rem);
-  max-width: calc(45vw - 2rem);
+  font-size: 1.1em;
+  border-radius: 5px;
+  font-weight: inherit;
+  width: calc(80vw - 2rem);
   outline: none;
   min-height: 4rem;
-  font-family: "Livvic";
+  resize: vertical;
 }
 .note p {
   font-size: 1.1em;
@@ -103,36 +100,41 @@ footer p {
   word-wrap: break-word;
 }
 .menus{
-  padding-top: 0.4rem;
   float: right;
 }
 .menus button {
   cursor: pointer;
   background-color: #fff;
   color: #f5ba13;
-  font-size: 2rem;
+  font-size: 1rem;
   border: none;
   outline: none;
   user-select: none;
   font-weight: bold;
 }
 .add{
-  padding-top: 0.4rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: end;
 }
 .add button {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f5ba13;
   color: #fff;
-  height: 3rem;
   user-select: none;
-  width: 3rem;
-  font-size: 2rem;
-  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4rem;
   border: none;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   outline: none;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
 .addcontainer{
   width: 100vw;
@@ -140,4 +142,42 @@ footer p {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5rem;
+}
+.about-container{
+  margin-top: 1rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+.about-container h2{
+  color: #dba50f;
+  margin-bottom: 0.3rem;
+}
+.link{
+  color: blue;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.down-arrow-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #f5ba13;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.down-arrow-btn:hover {
+  background-color: #dda610;
+}
+.down-arrow-btn svg {
+  fill: #fff;
 }
